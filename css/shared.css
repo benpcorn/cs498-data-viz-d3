@@ -1,0 +1,16 @@
+.container {
+  float: left;
+}
+
+#chart_container {
+  display: block;
+  margin: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+g > text {
+  font-size: 10px;
+}
