@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="../css/scene3.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+</head>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+
+<div class="topnav" id="myTopnav">
+  <a href="/index.html" class="active">Home</a>
+  <a href="/cs498-data-viz-d3/html/scene1.html">1. Revenue</a>
+  <a href="/cs498-data-viz-d3/html/scene2.html">2. Spending</a>
+  <a href="/cs498-data-viz-d3/html/scene3.html">3. Revenue vs. Spending</a>
+</div>
+
+<body>
+  <h2>
+    UIUC CS498 Data Visualization - Final Project - Federal Revenue vs. Spending
+  </h2>
+  <h3>
+    Benjamin Corn
+  </h3>
+  <a href="/cs498-data-viz-d3/html/scene1.html">Start the Visualization</a>
+
+  <h3>Message</h3>
+  <p>
+    Informing individuals about how the US federal government generates revenue, how they spend that money, and how those spending habits have changed over-time. This informs voters (and other residents) how the government is actually putting tax dollers to work vs. how they may think or anticipate they are. This knowledge can help voters make more informed decisions when electing candidates based on taxation and spending policies, or budget reforms.
+  </p>
+  </br>
+  </br>
+  <h3>Narrative Structure</h3>
+  <p>
+    The structure chosen was a slide show. The user is guided through the story via scenes, but can dive into the data at anytime in a scene. For example, Scene 1 (Revenue) shows the top-level categories of spending, but the viewer can select a top-level category to then display the sub-categories.
+  </p>
+  </br>
+  </br>
+  <h3>Visual Structure</h3>
+  <p>
+    A brief explanation of the scene is given at the top, along with a nudge on how to explore the data (e.g., click a category to explore). The top navigation bar is labeled numerically to indicate which scene the viewer is on, and how to progress. The graphs are created front-and-center, and read left-to-right. Annotations are only used if a unique callout exists in the data.
+  </p>
+  </br>
+  </br>
+  <h3>Scenes</h3>
+  <p>
+    Scene 1 starts with the Federal Revenue (income), which sets the scene for how that revenue is spent in Scene 2 (Spending). Scene 3 then takes a step further on the spending and views the spending trends over time from 2017 to 2021. This ordering was chosen as you need money first, to be able to spend money.
+  </p>
+  </br>
+  </br>
+  <h3>Annotations</h3>
+  <p>
+    Several Annotations exist in the visualization. Firstly, dynamic tooltips when hovering over the bar charts to show the percentage of the total for that category (bar). A simple and small annotation was chosen to only deliver the information that would be helpful in getting the full context of the bar element. In this case, what % of the total spending or revenue did this categeory have.
+  </br>
+</br>
+Two static annotations were added, one to Scene 1 and one to Scene 2 to highlight interesting elements in the data. In Scene 1, the Corporate Taxes category was highlighted, as the % was 1/5 that of individual income taxes. This is interesting as corporations in America generate huge amounts of revenue, but the workers are who are getting taxed the most. In Scene 2, the nearly non-existent amount of Energy Spending was annotated, which was surprising given the issues we face with our climate.
+</br>
+</br>
+Scene 3 utilizes a dynamic annotation (tooltip) as the user moves their mouse over the multi-line chart. The tooltip displays the category of spending for that line in that mouse position, as it can be difficult to decipher which line corresponds to which legend element (especially for people with colorblindness).
+</p>
+  </br>
+  </br>
+  <h3>Parameters</h3>
+  <p>
+    For Scene 1 and 2, the parameter is the category name that is currently selected by the viewer. This category name determines how to filter the dataset for the bar chart show below containing the sub-categories for the chosen category. Each time a top-level category is selected, the parameter is set and used to refresh the second chart of sub-categories with the new data.
+  </p>
+  </br>
+  </br>
+  <h3>Triggers</h3>
+  <p>
+    Mouse Over/Out triggers are used to show and hide the % tooltips in Scene 1 and Scene 2. Click event triggers are used in Scene 1 and Scene 2 to refresh the data that should be shown in the sub-category (e.g., clicking a top-level category then filters and refreshes all the data in the second chart).
+  </br>
+</br>
+  Mouse Over/Out/Move triggers are used in Scene 3 to determine when to show the guide line and category name legend on top of the chart. When the mouse enters the SVG area, the line and data are drawn. When the mouse is moved, the line and data are redrawn based on the mouse position, and when the mouse exists the SVG area, the drawing is cleared.
+</br>
+</br>
+Each trigger is communicated to the user via either an annotation or a small note in the explanation section of the scene.  
+</p>
+  </br>
+  </br>
+</body>
